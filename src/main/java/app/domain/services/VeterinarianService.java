@@ -18,6 +18,8 @@ public class VeterinarianService {
     @Autowired
     private MedicalHistoryPort medicalHistoryPort;
 
+    
+
     public void createMedicalHistory(MedicalHistory medicalHistory) throws Exception {
         if (medicalHistory == null) {
             throw new Exception("El historial médico no puede ser nulo.");

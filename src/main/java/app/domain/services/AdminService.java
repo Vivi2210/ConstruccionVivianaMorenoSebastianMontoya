@@ -2,6 +2,7 @@
 package app.domain.services;
 
 import app.ports.UserPort;
+import app.domain.models.Pet;
 import app.domain.models.User;
 import app.ports.PersonPort;
 import lombok.Getter;
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Setter
 @NoArgsConstructor
 @Service
+// @ComponentScan(basePackages = "app.adapters.pets")  
 
 public class AdminService {
     
@@ -22,6 +24,16 @@ public class AdminService {
     
     @Autowired
     private PersonPort personPort;
+
+      @Autowired
+      private PetPort petPort;
+
+    public void registerPet(Pet pet) throws Exception {
+       if (!personPort.existPerson(pet.getOwnerDocument())) {
+           throw new Exception("El dueño con cédula" + pet.getOwnerDocument() + "no existe"); 
+       }
+       petPort.savePet(pet);
+    }
     
     
     public void registerUser(User user) throws Exception {

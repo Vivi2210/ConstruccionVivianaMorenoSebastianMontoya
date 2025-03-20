@@ -11,14 +11,16 @@ import app.domain.models.Person;
  *
  * @author Viviana
  */
+
+
 public interface UserPort {
       
     public void saveUser(User user);
     public boolean existUserName(String username);
-
-    public User findById(long userId);
-
+    public User findByPersonDocument(Person person);
     public User findByUserName(String username);
+
+    
 
     
 

@@ -22,6 +22,7 @@ public class PetAdapter implements PetPort{
     
     @Autowired
     private PetRepository petRepository;
+    
     @Override
     public void savePet(Pet pet){
         PetEntity petEntity = toEntity(pet);
@@ -47,6 +48,8 @@ public class PetAdapter implements PetPort{
         }
         return pets;
     }
+
+    
     
     private PetEntity toEntity(Pet pet) {
         PetEntity petEntity = new PetEntity();
