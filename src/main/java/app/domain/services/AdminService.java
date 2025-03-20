@@ -25,15 +25,7 @@ public class AdminService {
     @Autowired
     private PersonPort personPort;
 
-      @Autowired
-      private PetPort petPort;
-
-    public void registerPet(Pet pet) throws Exception {
-       if (!personPort.existPerson(pet.getOwnerDocument())) {
-           throw new Exception("El dueño con cédula" + pet.getOwnerDocument() + "no existe"); 
-       }
-       petPort.savePet(pet);
-    }
+  
     
     
     public void registerUser(User user) throws Exception {

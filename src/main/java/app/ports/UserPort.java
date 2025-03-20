@@ -16,9 +16,12 @@ import app.domain.models.Person;
 public interface UserPort {
       
     public void saveUser(User user);
+
     public boolean existUserName(String username);
+
     public User findByPersonDocument(Person person);
-    public User findByUserName(String username);
+
+    public User findByUserName(User user);
 
     
 

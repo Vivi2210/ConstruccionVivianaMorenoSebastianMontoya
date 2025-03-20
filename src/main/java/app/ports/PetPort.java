@@ -9,8 +9,10 @@ import java.util.List;
 
         
 public interface PetPort {
+    public void registerPet(long petId);
     public void savePet(Pet pet);
     public Pet findByPetId( long PetId);
     public List<Pet> findByOwnerId(long ownerDocument);
+    public boolean existPet(long petId);
 
 }

@@ -9,30 +9,40 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class User extends Person {
-    private String username;
+    private long userDocument;
+    private String role;
+    private String userName;
     private String password;
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public User(String username, String password, long document, String name, String role, int age) {
+    public User(String userName, String password, long document, String name, String role, int age) {
         super(document, name, role, age);
-        this.username = username;
+        this.userName = userName;
         this.password = password;
     }
+
+    public void setUserDocument(Object userDocument) {
+        
+        
+    }
+
+
+  
 
   
 }
